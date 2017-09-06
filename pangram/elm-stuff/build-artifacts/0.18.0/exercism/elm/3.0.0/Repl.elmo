@@ -1,0 +1,15 @@
+var _exercism$elm$Repl$text = 'I have no idea';
+var _exercism$elm$Repl$t_s_o_l = {ctor: '_Tuple0'};
+var _exercism$elm$Repl$pangram = 'the quick brown fox jumps over the lazy dog';
+var _exercism$elm$Repl$normalized = _elm_lang$core$String$toLower(_exercism$elm$Repl$text);
+var _exercism$elm$Repl$letters = 'abcdefghijklmnopqrstuvwxyz';
+var _exercism$elm$Repl$lettersList = _elm_lang$core$String$split(_exercism$elm$Repl$letters);
+var _exercism$elm$Repl$d_e_l_t_r_o_n_3_0_3_0 = A2(
+	_elm_lang$core$String$all,
+	function (c) {
+		return A2(
+			_elm_lang$core$List$member,
+			c,
+			_elm_lang$core$String$toList(_exercism$elm$Repl$pangram));
+	},
+	_exercism$elm$Repl$letters);

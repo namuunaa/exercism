@@ -1,0 +1,13 @@
+var _exercism$elm$Pangram$isPangram = function (sentence) {
+	var lowerSentence = _elm_lang$core$String$toLower(sentence);
+	var alphabet = 'abcdefghijklmnopqrstuvqxyz';
+	return A2(
+		_elm_lang$core$String$all,
+		function (letter) {
+			return A2(
+				_elm_lang$core$List$member,
+				letter,
+				_elm_lang$core$String$toList(lowerSentence));
+		},
+		alphabet);
+};
