@@ -1,0 +1,22 @@
+var _exercism$elm$Anagram$convertedWord = function (word) {
+	return _elm_lang$core$List$sort(
+		_elm_lang$core$String$toList(
+			_elm_lang$core$String$toLower(word)));
+};
+var _exercism$elm$Anagram$isAnagram = F2(
+	function (word, comparableWord) {
+		return (_elm_lang$core$Native_Utils.eq(
+			_exercism$elm$Anagram$convertedWord(word),
+			_exercism$elm$Anagram$convertedWord(comparableWord)) && (!_elm_lang$core$Native_Utils.eq(
+			_elm_lang$core$String$toLower(word),
+			_elm_lang$core$String$toLower(comparableWord)))) ? true : false;
+	});
+var _exercism$elm$Anagram$detect = F2(
+	function (myWord, list) {
+		return A2(
+			_elm_lang$core$List$filter,
+			function (word) {
+				return A2(_exercism$elm$Anagram$isAnagram, myWord, word);
+			},
+			list);
+	});

@@ -1,0 +1,137 @@
+var _exercism$elm$ScrabbleScore$numberConversion = function ($char) {
+	return A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('A'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('E'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$core$Native_Utils.chr('I'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.chr('O'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$core$Native_Utils.chr('U'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$core$Native_Utils.chr('L'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$core$Native_Utils.chr('N'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$core$Native_Utils.chr('R'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$core$Native_Utils.chr('S'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$core$Native_Utils.chr('T'),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}) ? 1 : (A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('D'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('G'),
+				_1: {ctor: '[]'}
+			}
+		}) ? 2 : (A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('B'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('C'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$core$Native_Utils.chr('M'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.chr('P'),
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}) ? 3 : (A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('F'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('H'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$core$Native_Utils.chr('V'),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.chr('W'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$core$Native_Utils.chr('Y'),
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}) ? 4 : (_elm_lang$core$Native_Utils.eq(
+		$char,
+		_elm_lang$core$Native_Utils.chr('K')) ? 5 : (A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('J'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('X'),
+				_1: {ctor: '[]'}
+			}
+		}) ? 8 : (A2(
+		_elm_lang$core$List$member,
+		$char,
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.chr('Q'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.chr('Z'),
+				_1: {ctor: '[]'}
+			}
+		}) ? 10 : 0))))));
+};
+var _exercism$elm$ScrabbleScore$wordToChar = function (word) {
+	return _elm_lang$core$String$toList(
+		_elm_lang$core$String$toUpper(word));
+};
+var _exercism$elm$ScrabbleScore$scoreWord = function (word) {
+	var list = _exercism$elm$ScrabbleScore$wordToChar(word);
+	return _elm_lang$core$List$sum(
+		A2(
+			_elm_lang$core$List$map,
+			function ($char) {
+				return _exercism$elm$ScrabbleScore$numberConversion($char);
+			},
+			list));
+};
